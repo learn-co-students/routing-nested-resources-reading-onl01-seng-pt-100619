@@ -7,10 +7,12 @@ class Post < ActiveRecord::Base
   #put new code here
   def self.from_today
     where("created_at >=?", Time.zone.today.beginning_of_day)
+    
   end
 
   def self.old_news
     where("created_at <?", Time.zone.today.beginning_of_day)
+    
   end
 
   def self.by_author(author_id)
